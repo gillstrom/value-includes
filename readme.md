@@ -36,6 +36,11 @@ valueIncludes(arr, 'n');
 ```
 
 
+## Related
+
+* [value-is](https://github.com/gillstrom/value-is) - Search for values in an object or array
+
+
 ## License
 
 MIT © [Andreas Gillström](http://github.com/gillstrom)
