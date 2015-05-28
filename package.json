@@ -1,6 +1,6 @@
 {
   "name": "value-includes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Get values including a string in an object or array",
   "license": "MIT",
   "repository": "gillstrom/value-includes",
