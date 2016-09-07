@@ -13,9 +13,9 @@ $ npm install --save value-includes
 ## Usage
 
 ```js
-var valueIncludes = require('value-includes');
+const valueIncludes = require('value-includes');
 
-var obj = {
+const obj = {
 	a: 'ape',
 	b: 'banana',
 	c: 'captain'
@@ -24,10 +24,10 @@ var obj = {
 valueIncludes(obj, 'n');
 //=> {b: 'banana', c: 'captain'}
 
-var arr = [
+const arr = [
 	'ape',
 	'banana',
-	'cat'
+	'cat',
 	'banana'
 ]
 

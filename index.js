@@ -1,18 +1,16 @@
 'use strict';
-var stringIncludes = require('string-includes');
+const stringIncludes = require('string-includes');
 
-module.exports = function (obj, search) {
+module.exports = (obj, search) => {
 	if (typeof obj !== 'object') {
 		return;
 	}
 
-	var ret = {};
-
-	Object.keys(obj).forEach(function (key) {
+	return Object.keys(obj).reduce((all, key) => {
 		if (stringIncludes(obj[key], search)) {
-			ret[key] = obj[key];
+			all[key] = obj[key];
 		}
-	});
 
-	return ret;
+		return all;
+	}, {});
 };

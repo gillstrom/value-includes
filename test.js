@@ -1,37 +1,32 @@
-'use strict';
-var test = require('ava');
-var claim = require('claim');
-var valueIncludes = require('./');
-var obj = {
+import test from 'ava';
+import m from './';
+
+const obj = {
 	a: 'ape',
 	b: 'banana',
 	c: 'cat',
 	d: 'doorbell'
 };
 
-var arr = [
+const arr = [
 	'ape',
 	'banana',
 	'cat',
 	'doorbell'
 ];
 
-test('object', function (t) {
-	claim.same(valueIncludes(obj), {});
-	claim.same(valueIncludes(obj, 'z'), {});
-	claim.same(valueIncludes('obj', 'z'), undefined);
-	claim.same(valueIncludes(obj, 'doorbell'), {d: 'doorbell'});
-	claim.same(valueIncludes(obj, 'a'), {a: 'ape', b: 'banana', c: 'cat'});
-	t.end();
+test('object', t => {
+	t.deepEqual(m(obj), {});
+	t.deepEqual(m(obj, 'z'), {});
+	t.deepEqual(m('obj', 'z'), undefined);
+	t.deepEqual(m(obj, 'doorbell'), {d: 'doorbell'});
+	t.deepEqual(m(obj, 'a'), {a: 'ape', b: 'banana', c: 'cat'});
 });
 
-test('array', function (t) {
-	claim.same(valueIncludes(arr), {});
-	claim.same(valueIncludes(arr, 'z'), {});
-	claim.same(valueIncludes('arr', 'z'), undefined);
-	claim.same(valueIncludes(arr, 'doorbell'), {3: 'doorbell'});
-	claim.same(valueIncludes(arr, 'a'), {0: 'ape', 1: 'banana', 2: 'cat'});
-	t.end();
+test('array', t => {
+	t.deepEqual(m(arr), {});
+	t.deepEqual(m(arr, 'z'), {});
+	t.deepEqual(m('arr', 'z'), undefined);
+	t.deepEqual(m(arr, 'doorbell'), {3: 'doorbell'});
+	t.deepEqual(m(arr, 'a'), {0: 'ape', 1: 'banana', 2: 'cat'});
 });
-
-
